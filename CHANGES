@@ -1,0 +1,22 @@
+
+                 Release History of "entropy" Package
+               ========================================
+
+
+
+              CHANGES IN `entropy' PACKAGE VERSION 1.0.0
+
+
+This package implements the following estimators of entropy:
+
+* the James-Stein shrinkage estimator by Hausser and Strimmer,
+* the maximum likelihood estimator,
+* the Miller-Madow estimator,
+* various Bayesian estimators (based on Dirichlet-multinomial model),
+* and the Chen-Shao estimator.
+
+It also provides an R interface to the
+*  Nemenman-Shafee-Bialek (NSB) estimator.
+
+This is the first public release (2 September 2008).
+
