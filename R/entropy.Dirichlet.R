@@ -1,6 +1,6 @@
-### entropy.Dirichlet.R  (2008-08-20)
+### entropy.Dirichlet.R  (2008-09-28)
 ###
-###    Family of Dirichlet entropy estimators
+###    Family of Dirichlet entropy and mutual information estimators
 ###
 ### Copyright 2008 Korbinian Strimmer
 ###
@@ -47,5 +47,12 @@ freqs.Dirichlet = function(y, a)
 
   return(pa)
 }
+
+
+mi.Dirichlet = function(y, a, unit=c("log", "log2", "log10"))
+{
+  return( mi.plugin(freqs.Dirichlet(y, a), unit=unit) )
+}
+
 
 

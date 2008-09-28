@@ -1,6 +1,6 @@
-### entropy.empirical.R  (2008-09-28)
+### mi.plugin.R  (2008-09-28)
 ###
-###    Empirical entropy and mutual information estimator
+###    Plug-in mutual information estimator
 ###
 ### Copyright 2008 Korbinian Strimmer
 ###
@@ -22,22 +22,21 @@
 ### MA 02111-1307, USA
 
 
-# compute empirical entropy 
-# y is a vector of counts (may include zeros)
-entropy.empirical = function(y, unit=c("log", "log2", "log10"))
+mi.plugin = function(freqs2d, unit=c("log", "log2", "log10"))
 {
-  return( entropy.plugin(freqs.empirical(y), unit=unit) )
-}
+  unit = match.arg(unit)
 
-# empirical frequencies
-freqs.empirical = function(y)
-{
-  return( y/sum(y) )
-}
+  freqs2d = as.matrix(freqs2d/sum(freqs2d)) # just to make sure ...
 
-# empirical mutual information
-mi.empirical = function(y, unit=c("log", "log2", "log10"))
-{
-  return( mi.plugin(freqs.empirical(y), unit=unit) )
+  freqs.x = apply(freqs2d, 1, sum) # marginal frequencies
+  freqs.y = apply(freqs2d, 2, sum)
+
+  H.xy = entropy.plugin(freqs2d, unit=unit)
+  H.x = entropy.plugin(freqs.x, unit=unit)
+  H.y = entropy.plugin(freqs.y, unit=unit)
+  
+  MI = H.x + H.y - H.xy
+
+  return(MI)
 }
 

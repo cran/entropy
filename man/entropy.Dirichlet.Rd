@@ -1,10 +1,12 @@
 \name{entropy.Dirichlet}
 \alias{entropy.Dirichlet}
 \alias{freqs.Dirichlet}
-\title{Family of Dirichlet entropy estimators}
+\alias{mi.Dirichlet}
+\title{Family of Dirichlet entropy and mutual information estimators}
 
 \usage{
 entropy.Dirichlet(y, a, unit=c("log", "log2", "log10"))
+mi.Dirichlet(y, a, unit=c("log", "log2", "log10"))
 freqs.Dirichlet(y, a)
 }
 
@@ -14,13 +16,15 @@ freqs.Dirichlet(y, a)
    of the bin frequencies using the  Dirichlet-multinomial       
    pseudocount model.
 
+  \code{mi.Dirichlet} estimates the corresponding mutual information of two random variables.
+
   \code{freqs.Dirichlet} computes the Bayesian estimates
    of the bin frequencies using the  Dirichlet-multinomial       
    pseudocount model.
 }
 
 \arguments{
-  \item{y}{vector of counts.}
+  \item{y}{vector or matrix of counts.}
   \item{a}{pseudocount per bin.}
   \item{unit}{the unit in which entropy is measured.}
 }
@@ -47,6 +51,8 @@ freqs.Dirichlet(y, a)
 \value{
   \code{entropy.Dirichlet} returns an estimate of the Shannon entropy. 
 
+  \code{mi.Dirichlet} returns an estimate of the mutual information. 
+
   \code{freqs.Dirichlet} returns the underlying frequencies. 
 }
 
@@ -68,7 +74,8 @@ freqs.Dirichlet(y, a)
          \code{\link{entropy.NSB}}, 
          \code{\link{entropy.ChaoShen}}, 
          \code{\link{entropy.empirical}}, 
-         \code{\link{entropy.plugin}}.
+         \code{\link{entropy.plugin}},
+         \code{\link{mi.plugin}}.
 }
 
 \examples{
@@ -95,5 +102,12 @@ entropy.Dirichlet(y, a=1/length(y))
 
 # Dirichlet estimate with a=sqrt(sum(y))/length(y)
 entropy.Dirichlet(y, a=sqrt(sum(y))/length(y))
+
+
+# contigency table with counts for two discrete variables
+y = rbind( c(1,2,3), c(6,5,4) )
+
+# Dirichlet estimate of mutual information (with a=1/2)
+mi.Dirichlet(y, a=1/2)
 }
 \keyword{univar}

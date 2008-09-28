@@ -1,4 +1,4 @@
-### entropy.plugin.R  (2008-08-20)
+### entropy.plugin.R  (2008-09-28)
 ###
 ###    Plug-in entropy estimator
 ###
@@ -28,8 +28,7 @@ entropy.plugin = function(freqs, unit=c("log", "log2", "log10"))
 
    freqs = freqs/sum(freqs) # just to make sure ...
 
-   p = freqs[freqs > 0]   # remove zero frequencies
-   H = -sum(p*log(p))     # plug-in estimate of entropy
+   H = -sum( ifelse(freqs > 0, freqs*log(freqs), 0) )
 
    if (unit == "log2")  H = H/log(2)  # change from log to log2 scale
    if (unit == "log10") H = H/log(10) # change from log to log10 scale

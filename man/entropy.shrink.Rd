@@ -1,10 +1,12 @@
 \name{entropy.shrink}
 \alias{entropy.shrink}
 \alias{freqs.shrink}
-\title{Shrinkage entropy estimator}
+\alias{mi.shrink}
+\title{Shrinkage entropy and mutual information estimator}
 
 \usage{
 entropy.shrink(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+mi.shrink(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
 freqs.shrink(y, target=1/length(y), verbose=TRUE)
 }
 
@@ -12,14 +14,16 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
   \code{entropy.shrink} estimates the Shannon entropy H of the random variable Y
    from the corresponding observed counts \code{y} by plug-in of shrinkage estimate
    of the bin frequencies.
-  
+ 
+  \code{mi.shrink} estimates the corresponding mutual information of two random variables.
+ 
   \code{freq.shrink} estimates the bin frequencies from the counts \code{y}
   using a James-Stein-type shrinkage estimator.  The default shrinkage target is the uniform,
   unless otherwise specified.
 }
 
 \arguments{
-  \item{y}{vector of counts.}
+  \item{y}{vector or matrix of counts.}
   \item{unit}{the unit in which entropy is measured.}
   \item{target}{the shrinkage target for the frequencies (default: uniform distribution).}
   \item{verbose}{report shrinkage intensity and equivalent pseudocount.}
@@ -47,7 +51,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 \seealso{\code{\link{entropy.Dirichlet}}, 
           \code{\link{entropy.NSB}}, 
          \code{\link{entropy.ChaoShen}}, 
-         \code{\link{entropy.plugin}}.}
+         \code{\link{entropy.plugin}},  \code{\link{mi.plugin}}.}
 
 \examples{
 # load entropy library 
@@ -58,5 +62,11 @@ y = c(4, 2, 3, 0, 2, 4, 0, 0, 2, 1, 1)
 
 # shrinkage estimate
 entropy.shrink(y)
+
+# contigency table with counts for two discrete variables
+y = rbind( c(1,2,3), c(6,5,4) )
+
+# shrinkage estimate of mutual information
+mi.shrink(y)
 }
 \keyword{univar}

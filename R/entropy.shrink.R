@@ -1,6 +1,6 @@
-### entropy.shrink.R  (2008-08-20)
+### entropy.shrink.R  (2008-09-28)
 ###
-###    Shrinkage entropy estimator
+###    Shrinkage entropy and mutual information estimator
 ###
 ### Copyright 2008 Korbinian Strimmer
 ###
@@ -42,6 +42,12 @@ freqs.shrink = function(y, target=1/length(y), verbose=TRUE)
   u.shrink = lambda*target + (1-lambda)*u
   
   return(u.shrink)
+}
+
+
+mi.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+{
+  return( mi.plugin(freqs.shrink(y, target=target, verbose=verbose), unit=unit) )
 }
 
 

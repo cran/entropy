@@ -1,10 +1,13 @@
 \name{entropy.empirical}
 \alias{entropy.empirical}
 \alias{freqs.empirical}
-\title{Empirical entropy estimator}
+\alias{mi.empirical}
+
+\title{Empirical entropy and mutual information estimator}
 
 \usage{
 entropy.empirical(y, unit=c("log", "log2", "log10"))
+mi.empirical = function(y, unit=c("log", "log2", "log10"))
 freqs.empirical(y)
 }
 
@@ -13,11 +16,13 @@ freqs.empirical(y)
    of the random variable Y from the corresponding observed counts \code{y}
    by plug-in of the empirical frequencies.
 
+  \code{mi.empirical} computes the empirical mutual information from counts \code{y}.
+
   \code{freqs.empirical} computes the empirical frequencies from counts \code{y}.
 }
 
 \arguments{
-  \item{y}{vector of counts.}
+  \item{y}{vector or matrix of counts.}
   \item{unit}{the unit in which entropy is measured.}
 }
 \details{
@@ -32,6 +37,8 @@ freqs.empirical(y)
 \value{
   \code{entropy.empirical} returns an estimate of the Shannon entropy. 
 
+  \code{mi.empirical} returns an estimate of the mutual information. 
+
   \code{freqs.empirical} returns the underlying frequencies.
 }
 
@@ -40,7 +47,8 @@ freqs.empirical(y)
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
 
-\seealso{\code{\link{entropy.MillerMadow}}, \code{\link{entropy.plugin}}.}
+\seealso{\code{\link{entropy.MillerMadow}}, \code{\link{entropy.plugin}},
+ \code{\link{mi.plugin}}.}
 
 
 \examples{
@@ -52,5 +60,11 @@ y = c(4, 2, 3, 0, 2, 4, 0, 0, 2, 1, 1)
 
 # empirical estimate of entropy
 entropy.empirical(y)
+
+# contigency table with counts for two discrete variables
+y = rbind( c(1,2,3), c(6,5,4) )
+
+# empirical estimate of mutual information
+mi.empirical(y)
 }
 \keyword{univar}
