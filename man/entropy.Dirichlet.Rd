@@ -70,7 +70,8 @@ freqs.Dirichlet(y, a)
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
-\seealso{\code{\link{entropy.shrink}},
+\seealso{\code{\link{entropy}}, 
+         \code{\link{entropy.shrink}},
          \code{\link{entropy.NSB}}, 
          \code{\link{entropy.ChaoShen}}, 
          \code{\link{entropy.empirical}}, 

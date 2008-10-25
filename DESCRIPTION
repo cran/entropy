@@ -1,6 +1,6 @@
 Package: entropy
-Version: 1.1.0
-Date: 2008-09-28
+Version: 1.1.1
+Date: 2008-10-25
 Title: Entropy and Mutual Information Estimation
 Author: Jean Hauser and Korbinian Strimmer
 Maintainer: Korbinian Strimmer <strimmer@uni-leipzig.de>
@@ -13,4 +13,4 @@ Description: This package implements various estimators of entropy, such
   Furthermore, it provides functions for estimating mutual information.
 License: GPL (>= 3)
 URL: http://www.strimmerlab.org/software/entropy/
-Packaged: Sun Sep 28 22:51:16 2008; strimmer
+Packaged: Sat Oct 25 22:02:40 2008; strimmer

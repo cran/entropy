@@ -38,7 +38,12 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 \value{
   \code{entropy.shrink} returns an estimate of the Shannon entropy. 
 
+   \code{freqs.shrink} returns an estimtate of mutual information. 
+
   \code{freqs.shrink} returns the underlying frequencies. 
+
+   In all instances the estimated shrinkage intensity is attached to the returned
+   value in the attribute \code{lambda.freqs}.
 }
 
 \references{
@@ -48,7 +53,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
-\seealso{\code{\link{entropy.Dirichlet}}, 
+\seealso{\code{\link{entropy}}, \code{\link{entropy.Dirichlet}}, 
           \code{\link{entropy.NSB}}, 
          \code{\link{entropy.ChaoShen}}, 
          \code{\link{entropy.plugin}},  \code{\link{mi.plugin}}.}

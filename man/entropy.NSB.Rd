@@ -40,7 +40,7 @@ entropy.NSB(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")
 \author{
   Jean Hausser (\url{http://jean.hausser.org}).
 }
-\seealso{\code{\link{entropy.shrink}},
+\seealso{\code{\link{entropy}}, \code{\link{entropy.shrink}},
          \code{\link{entropy.Dirichlet}}, 
          \code{\link{entropy.ChaoShen}}.
 }

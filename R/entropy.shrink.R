@@ -1,4 +1,4 @@
-### entropy.shrink.R  (2008-09-28)
+### entropy.shrink.R  (2008-10-25)
 ###
 ###    Shrinkage entropy and mutual information estimator
 ###
@@ -29,25 +29,42 @@
 
 entropy.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
 {
-  return( entropy.plugin(freqs.shrink(y, target=target, verbose=verbose), unit=unit) )
+  f = freqs.shrink(y, target=target, verbose=verbose)
+  h = entropy.plugin(f, unit=unit)
+  attr(h, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
+
+  return( h )
 }
 
-freqs.shrink = function(y, target=1/length(y), verbose=TRUE)
-{
-  n = sum(y)        # total number of counts
-  u = y/n           # empirical frequencies
 
-  # shrinkage estimate of frequencies
-  lambda = get.lambda.shrink(n, u, target, verbose)
-  u.shrink = lambda*target + (1-lambda)*u
-  
-  return(u.shrink)
+freqs.shrink = function (y, target = 1/length(y), verbose = TRUE) 
+{
+    n = sum(y)
+    u = y/n
+
+    if (n==1 || n==0)
+    {
+      lambda.freqs = 1
+       u.shrink = rep(0, length(y)) + target
+    }
+    else
+    {
+      lambda.freqs = get.lambda.shrink(n, u, target, verbose)
+      u.shrink = lambda.freqs * target + (1 - lambda.freqs) * u
+    }
+    attr(u.shrink, "lambda.freqs") = lambda.freqs
+    
+    return(u.shrink)
 }
 
 
 mi.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
 {
-  return( mi.plugin(freqs.shrink(y, target=target, verbose=verbose), unit=unit) )
+  f = freqs.shrink(y, target=target, verbose=verbose)
+  mi = mi.plugin(f, unit=unit)
+  attr(mi, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
+
+  return( mi )
 }
 
 

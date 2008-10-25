@@ -3,6 +3,13 @@
                ========================================
 
 
+              CHANGES IN `entropy' PACKAGE VERSION 1.1.1
+
+* bug fix: freqs.shrink() now also works for sample sizes 1 and 0
+* freqs.shrink(), entropy.shrink() and mi.shrink() now return the
+  estimated shrinkage intensity as attribute (lambda.freqs).
+
+
               CHANGES IN `entropy' PACKAGE VERSION 1.1.0
 
 * several new functions added for estimating mutual information:
