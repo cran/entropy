@@ -1,4 +1,4 @@
-### entropy.shrink.R  (2008-10-25)
+### entropy.shrink.R  (2008-10-26)
 ###
 ###    Shrinkage entropy and mutual information estimator
 ###
@@ -101,7 +101,7 @@ get.lambda.shrink = function(n, u, t, verbose)
   
   if (verbose)
   {
-    cat(paste("Estimated shrinkage intensity lambda: ", 
+    cat(paste("Estimating optimal shrinkage intensity lambda.freq (frequencies):", 
       round(lambda, 4)) , "\n")
   }
 

@@ -38,7 +38,7 @@ entropy.NSB(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")
    MIT Press.
 }
 \author{
-  Jean Hausser (\url{http://jean.hausser.org}).
+  Jean Hausser.
 }
 \seealso{\code{\link{entropy}}, \code{\link{entropy.shrink}},
          \code{\link{entropy.Dirichlet}}, 

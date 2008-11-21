@@ -3,6 +3,13 @@
                ========================================
 
 
+             CHANGES IN `entropy' PACKAGE VERSION 1.1.2
+
+* verbose messages for shrinkage entropy are now more informative and 
+  in the same style as those from corpcor
+* man pages slightly updated
+
+
               CHANGES IN `entropy' PACKAGE VERSION 1.1.1
 
 * bug fix: freqs.shrink() now also works for sample sizes 1 and 0

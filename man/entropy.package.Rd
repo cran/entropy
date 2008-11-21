@@ -13,13 +13,13 @@ a unified interface to various entropy estimators.
 
 If you use this package please cite:
 Jean Hausser and Korbinian Strimmer. 2008.  Entropy inference and the James-Stein estimator. 
-Preprint (see \url{http://strimmerlab.org/publications/entropy2008.pdf}).
+See \url{http://arxiv.org/abs/0811.3579} for publication details.
 
 This paper contains a detailed statistical comparison of the estimators available 
 in this package. It also describes the shrinkage entropy estimator \code{\link{entropy.shrink}}.
 }
 
-\author{Jean Hausser (\url{http://jean.hausser.org/}) and Korbinian Strimmer (\url{http://strimmerlab.org/})}
+\author{Jean Hausser and Korbinian Strimmer (\url{http://strimmerlab.org/})}
 \references{
   See website: \url{http://strimmerlab.org/software/entropy/}
 }

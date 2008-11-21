@@ -1,6 +1,6 @@
 Package: entropy
-Version: 1.1.1
-Date: 2008-10-25
+Version: 1.1.2
+Date: 2008-11-21
 Title: Entropy and Mutual Information Estimation
 Author: Jean Hauser and Korbinian Strimmer
 Maintainer: Korbinian Strimmer <strimmer@uni-leipzig.de>
@@ -12,5 +12,5 @@ Description: This package implements various estimators of entropy, such
   Chao-Shen estimator.  It also offers an R interface to the NSB estimator.
   Furthermore, it provides functions for estimating mutual information.
 License: GPL (>= 3)
-URL: http://www.strimmerlab.org/software/entropy/
-Packaged: Sat Oct 25 22:02:40 2008; strimmer
+URL: http://strimmerlab.org/software/entropy/
+Packaged: Fri Nov 21 23:02:37 2008; strimmer

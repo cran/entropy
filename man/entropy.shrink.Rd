@@ -26,7 +26,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
   \item{y}{vector or matrix of counts.}
   \item{unit}{the unit in which entropy is measured.}
   \item{target}{the shrinkage target for the frequencies (default: uniform distribution).}
-  \item{verbose}{report shrinkage intensity and equivalent pseudocount.}
+  \item{verbose}{report shrinkage intensity.}
 }
 \details{
    The shrinkage estimator is a James-Stein-type estimator.  It is essentially
@@ -48,7 +48,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 
 \references{
   Hausser, J., and K. Strimmer. 2008.  Entropy inference and the James-Stein
-  estimator. Preprint (see \url{http://strimmerlab.org/publications/entropy2008.pdf}).
+  estimator. See \url{http://arxiv.org/abs/0811.3579} for publication details.
 }
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).
