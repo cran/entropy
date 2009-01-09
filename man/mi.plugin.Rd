@@ -1,6 +1,6 @@
 \name{mi.plugin}
 \alias{mi.plugin}
-\title{Plug-in mutual information estimator}
+\title{Plug-In Mutual Information Estimator}
 
 \usage{
 mi.plugin(freqs2d, unit=c("log", "log2", "log10"))

@@ -1,6 +1,6 @@
 \name{entropy.NSB}
 \alias{entropy.NSB}
-\title{R interface to NSB entropy estimator}
+\title{R Interface to NSB Entropy Estimator}
 
 \usage{
 entropy.NSB(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")

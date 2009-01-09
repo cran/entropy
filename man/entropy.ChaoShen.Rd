@@ -1,6 +1,6 @@
 \name{entropy.ChaoShen}
 \alias{entropy.ChaoShen}
-\title{Chao-Shen entropy estimator}
+\title{Chao-Shen Entropy Estimator}
 
 \usage{
 entropy.ChaoShen(y, unit=c("log", "log2", "log10"))

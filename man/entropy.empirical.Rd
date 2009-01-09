@@ -3,7 +3,7 @@
 \alias{freqs.empirical}
 \alias{mi.empirical}
 
-\title{Empirical entropy and mutual information estimator}
+\title{Empirical Entropy and Mutual Information Estimator}
 
 \usage{
 entropy.empirical(y, unit=c("log", "log2", "log10"))

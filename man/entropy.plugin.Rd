@@ -1,6 +1,6 @@
 \name{entropy.plugin}
 \alias{entropy.plugin}
-\title{Plug-in entropy estimator}
+\title{Plug-In Entropy Estimator}
 
 \usage{
 entropy.plugin(freqs, unit=c("log", "log2", "log10"))

@@ -1,6 +1,6 @@
 \name{entropy.MillerMadow}
 \alias{entropy.MillerMadow}
-\title{Miller-Madow entropy estimator}
+\title{Miller-Madow Entropy Estimator}
 
 \usage{
 entropy.MillerMadow(y, unit=c("log", "log2", "log10"))

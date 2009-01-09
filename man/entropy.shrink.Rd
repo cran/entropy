@@ -2,7 +2,7 @@
 \alias{entropy.shrink}
 \alias{freqs.shrink}
 \alias{mi.shrink}
-\title{Shrinkage entropy and mutual information estimator}
+\title{Shrinkage Entropy and Mutual Information Estimator}
 
 \usage{
 entropy.shrink(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
@@ -38,7 +38,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 \value{
   \code{entropy.shrink} returns an estimate of the Shannon entropy. 
 
-   \code{freqs.shrink} returns an estimtate of mutual information. 
+   \code{mi.shrink} returns an estimate of mutual information. 
 
   \code{freqs.shrink} returns the underlying frequencies. 
 
@@ -48,7 +48,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 
 \references{
   Hausser, J., and K. Strimmer. 2008.  Entropy inference and the James-Stein
-  estimator. See \url{http://arxiv.org/abs/0811.3579} for publication details.
+  estimator, with application to nonlinear gene association networks. See \url{http://arxiv.org/abs/0811.3579} for publication details.
 }
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).

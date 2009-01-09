@@ -1,7 +1,7 @@
 \name{entropy}
 \alias{entropy}
 \alias{freqs}
-\title{Estimating entropy from observed counts}
+\title{Estimating Entropy From Observed Counts}
 
 \usage{
 entropy(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"),
@@ -27,19 +27,19 @@ freqs(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB
 \details{
   The \code{entropy} function allows to estimate entropy from observed counts by a variety
   of methods:
- 
-  \item{\code{method="ML"}}{maximum likelihood, see \code{\link{entropy.empirical}} }
-  \item{\code{method="MM"}}{bias-corrected maximum likelihood, see \code{\link{entropy.MillerMadow}} }
-  \item{\code{method="Jeffreys"}}{\code{\link{entropy.Dirichlet}} with \code{a=1/2} }
-  \item{\code{method="Laplace"}}{\code{\link{entropy.Dirichlet}} with \code{a=1} }
-  \item{\code{method="SG"}}{\code{\link{entropy.Dirichlet}} with \code{a=a=1/length(y)} }
-  \item{\code{method="minimax"}}{\code{\link{entropy.Dirichlet}} with \code{a=sqrt(sum(y))/length(y} }
-  \item{\code{method="CS"}}{see \code{\link{entropy.ChaoShen}} }
-  \item{\code{method="NSB"}}{see \code{\link{entropy.NSB}} }
-  \item{\code{method="shrink"}}{see \code{\link{entropy.shrink}} }
-
- The \code{freqs} functions estimates the underlying bin frequencies.  Note that
- these are not
+ \itemize{
+  \item{\code{method="ML"}:}{maximum likelihood, see \code{\link{entropy.empirical}} }
+  \item{\code{method="MM"}:}{bias-corrected maximum likelihood, see \code{\link{entropy.MillerMadow}} }
+  \item{\code{method="Jeffreys"}:}{\code{\link{entropy.Dirichlet}} with \code{a=1/2} }
+  \item{\code{method="Laplace"}:}{\code{\link{entropy.Dirichlet}} with \code{a=1} }
+  \item{\code{method="SG"}:}{\code{\link{entropy.Dirichlet}} with \code{a=a=1/length(y)} }
+  \item{\code{method="minimax"}:}{\code{\link{entropy.Dirichlet}} with \code{a=sqrt(sum(y))/length(y} }
+  \item{\code{method="CS"}:}{see \code{\link{entropy.ChaoShen}} }
+  \item{\code{method="NSB"}:}{see \code{\link{entropy.NSB}} }
+  \item{\code{method="shrink"}:}{see \code{\link{entropy.shrink}} }
+ }
+ The \code{freqs} function estimates the underlying bin frequencies.  Note that
+ estimated frequencies are not
  available for \code{method="MM"}, \code{method="CS"} and \code{method="NSB"}. In these
  instances a vector containing NAs is returned.
 }

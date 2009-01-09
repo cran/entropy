@@ -2,7 +2,7 @@
 \alias{entropy.Dirichlet}
 \alias{freqs.Dirichlet}
 \alias{mi.Dirichlet}
-\title{Family of Dirichlet entropy and mutual information estimators}
+\title{Family of Dirichlet Entropy and Mutual Information Estimators}
 
 \usage{
 entropy.Dirichlet(y, a, unit=c("log", "log2", "log10"))
@@ -35,14 +35,15 @@ freqs.Dirichlet(y, a)
    bin probabilities are replaced by the respective Bayesian estimates
    of the frequencies, using a model with a Dirichlet prior and a multinomial likelihood.
 
-  The parameter \code{a} is a parameter of of the Dirichlet prior, and in effect
+  The parameter \code{a} is a parameter of the Dirichlet prior, and in effect
   specifies the pseudocount per bin.  Popular choices of \code{a} are:
-
-  \item{a=0}{maximum likelihood estimator (see \code{\link{entropy.empirical}}) } 
-  \item{a=1/2}{Jeffreys' prior; Krichevsky-Trovimov (1991) entropy estimator}
-  \item{a=1}{Laplace's prior}
-  \item{a=1/length(y)}{Schurmann-Grassberger (1996) entropy estimator}
-  \item{a=sqrt(sum(y))/length(y) }{minimax prior}
+  \itemize{
+   \item{a=0:}{maximum likelihood estimator (see \code{\link{entropy.empirical}}) } 
+   \item{a=1/2:}{Jeffreys' prior; Krichevsky-Trovimov (1991) entropy estimator}
+   \item{a=1:}{Laplace's prior}
+   \item{a=1/length(y):}{Schurmann-Grassberger (1996) entropy estimator}
+   \item{a=sqrt(sum(y))/length(y):}{minimax prior}
+  }
 
   The pseudocount \code{a} can also be a vector so that for each bin an 
   individual pseudocount is added.
