@@ -12,8 +12,8 @@ The main function of this package is \code{\link{entropy}}, which provides
 a unified interface to various entropy estimators.
 
 If you use this package please cite:
-Jean Hausser and Korbinian Strimmer. 2008.  Entropy inference and the James-Stein estimator, with application to nonlinear gene association networks. 
-See \url{http://arxiv.org/abs/0811.3579} for publication details.
+Jean Hausser and Korbinian Strimmer. 2009.  Entropy inference and the James-Stein estimator, with application to nonlinear gene association networks.  J. Mach. Learn. Res. \bold{10}: 1469-1484.  Available online from
+   \url{http://jmlr.csail.mit.edu/papers/v10/hausser09a.html}.
 
 This paper contains a detailed statistical comparison of the estimators available 
 in this package. It also describes the shrinkage entropy estimator \code{\link{entropy.shrink}}.

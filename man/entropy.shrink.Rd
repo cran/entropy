@@ -33,7 +33,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
    a  \code{\link{entropy.Dirichlet}} estimator, where the pseudocount is
    estimated from the data.
  
-   For details see Hausser and Strimmer (2008).
+   For details see Hausser and Strimmer (2009).
 }
 \value{
   \code{entropy.shrink} returns an estimate of the Shannon entropy. 
@@ -47,8 +47,10 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 }
 
 \references{
-  Hausser, J., and K. Strimmer. 2008.  Entropy inference and the James-Stein
-  estimator, with application to nonlinear gene association networks. See \url{http://arxiv.org/abs/0811.3579} for publication details.
+  Hausser, J., and K. Strimmer. 2009.  Entropy inference and the James-Stein
+  estimator, with application to nonlinear gene association networks. 
+   J. Mach. Learn. Res. \bold{10}: 1469-1484.  Available online from
+   \url{http://jmlr.csail.mit.edu/papers/v10/hausser09a.html}.
 }
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).
