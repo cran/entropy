@@ -47,7 +47,7 @@ freqs.empirical(y)
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
 
-\seealso{\code{\code{\link{entropy}}, \link{entropy.MillerMadow}}, \code{\link{entropy.plugin}},
+\seealso{\code{\link{entropy}}, \code{\link{entropy.MillerMadow}}, \code{\link{entropy.plugin}},
  \code{\link{mi.plugin}}.}
 
 

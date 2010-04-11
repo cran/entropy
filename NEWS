@@ -2,6 +2,10 @@
                  Release History of "entropy" Package
                ========================================
 
+             CHANGES IN `entropy' PACKAGE VERSION 1.1.5
+
+* small bug in documentation file fixed (for R 2.11.0 release)
+
 
              CHANGES IN `entropy' PACKAGE VERSION 1.1.4
 
