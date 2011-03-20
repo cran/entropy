@@ -26,7 +26,9 @@ freqs.Dirichlet(y, a)
 \arguments{
   \item{y}{vector or matrix of counts.}
   \item{a}{pseudocount per bin.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
   The Dirichlet-multinomial pseudocount entropy estimator

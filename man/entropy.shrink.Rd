@@ -24,7 +24,9 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
 
 \arguments{
   \item{y}{vector or matrix of counts.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
   \item{target}{the shrinkage target for the frequencies (default: uniform distribution).}
   \item{verbose}{report shrinkage intensity.}
 }

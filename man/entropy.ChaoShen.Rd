@@ -13,7 +13,9 @@ entropy.ChaoShen(y, unit=c("log", "log2", "log10"))
 
 \arguments{
   \item{y}{vector of counts.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
   The Chao-Shen entropy estimator (2003) is a  Horvitz-Thompson (1952) 

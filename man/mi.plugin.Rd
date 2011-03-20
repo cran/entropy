@@ -13,7 +13,9 @@ mi.plugin(freqs2d, unit=c("log", "log2", "log10"))
 
 \arguments{
   \item{freqs2d}{matrix of bin frequencies.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
    The mutual information of two discrete random variables \eqn{X} and \eqn{Y}

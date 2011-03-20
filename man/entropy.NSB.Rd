@@ -16,7 +16,9 @@ entropy.NSB(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")
 
 \arguments{
   \item{y}{vector of counts.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
   \item{CMD}{path to the "nsb-entropy" executable.}
 }
 \details{

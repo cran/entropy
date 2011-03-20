@@ -14,7 +14,9 @@ entropy.MillerMadow(y, unit=c("log", "log2", "log10"))
 
 \arguments{
   \item{y}{vector of counts.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
   The Miller-Madow entropy estimator (1955) is the bias-corrected empirical

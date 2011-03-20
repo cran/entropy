@@ -7,7 +7,7 @@
 
 \usage{
 entropy.empirical(y, unit=c("log", "log2", "log10"))
-mi.empirical = function(y, unit=c("log", "log2", "log10"))
+mi.empirical(y, unit=c("log", "log2", "log10"))
 freqs.empirical(y)
 }
 
@@ -23,7 +23,9 @@ freqs.empirical(y)
 
 \arguments{
   \item{y}{vector or matrix of counts.}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
    The empirical entropy estimator is a plug-in estimator: 

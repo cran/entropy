@@ -19,7 +19,9 @@ freqs(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB
 \arguments{
   \item{y}{vector of counts.}
   \item{method}{the method employed to estimate entropy (see Details).}
-  \item{unit}{the unit in which entropy is measured.}
+  \item{unit}{the unit in which entropy is measured. 
+                The default is "nats" (natural units). For 
+                computing entropy in "bits" set \code{unit="log2"}.}
   \item{target}{shrinkage target (for "shrink" option). }
   \item{verbose}{verbose option (for "shrink" option).  }
   \item{\dots}{option passed on to \code{\link{entropy.NSB}}.}

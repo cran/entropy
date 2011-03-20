@@ -2,6 +2,13 @@
                  Release History of "entropy" Package
                ========================================
 
+             CHANGES IN `entropy' PACKAGE VERSION 1.1.6
+
+* small in documentation file fixed (for R 2.13.0 release)
+* added in documentation that the default unit for the entropy
+  is "nats" (natural units), for "bits" one needs to set unit="log2".
+
+
              CHANGES IN `entropy' PACKAGE VERSION 1.1.5
 
 * small bug in documentation file fixed (for R 2.11.0 release)
