@@ -2,6 +2,12 @@
                  Release History of "entropy" Package
                ========================================
 
+
+             CHANGES IN `entropy' PACKAGE VERSION 1.1.7
+
+* NAMESPACE file added
+
+
              CHANGES IN `entropy' PACKAGE VERSION 1.1.6
 
 * small in documentation file fixed (for R 2.13.0 release)
