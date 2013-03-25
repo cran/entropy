@@ -1,8 +1,8 @@
-### entropy.R  (2008-08-20)
+### entropy.R  (2013-03-25)
 ###
 ###    Estimating entropy from observed counts
 ###
-### Copyright 2008 Korbinian Strimmer
+### Copyright 2008-13 Korbinian Strimmer
 ###
 ###
 ### This file is part of the `entropy' library for R and related languages.
@@ -22,7 +22,7 @@
 ### MA 02111-1307, USA
 
 
-entropy = function(y, method=c("ML", "MM", "Jeffreys", "Laplace", 
+entropy = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", 
                    "SG", "minimax", "CS", "NSB", "shrink"),
                    unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE, ...)
 {
@@ -38,12 +38,13 @@ entropy = function(y, method=c("ML", "MM", "Jeffreys", "Laplace",
   if (method == "SG")       H = entropy.Dirichlet(y, a=1/length(y), unit=unit)
   if (method == "minimax")  H = entropy.Dirichlet(y, a=sqrt(sum(y))/length(y), unit=unit)
 
-  if (method == "shrink")   H = entropy.shrink(y, unit=unit, verbose=verbose, target=target)
+  if (method == "shrink")   H = entropy.shrink(y, lambda.freqs=lambda.freqs,
+      unit=unit, verbose=verbose, target=target)
 
   return(H)
 }
 
-freqs = function(y, method=c("ML", "MM", "Jeffreys", "Laplace", 
+freqs = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", 
                    "SG", "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
 {
   method = match.arg(method)
@@ -58,7 +59,8 @@ freqs = function(y, method=c("ML", "MM", "Jeffreys", "Laplace",
   if (method == "SG")       H = freqs.Dirichlet(y, a=1/length(y))
   if (method == "minimax")  H = freqs.Dirichlet(y, a=sqrt(sum(y))/length(y))
 
-  if (method == "shrink")   H = freqs.shrink(y, verbose=verbose, target=target)
+  if (method == "shrink")   H = freqs.shrink(y, lambda.freqs=lambda.freqs,
+                               verbose=verbose, target=target)
 
   return(H)
 }

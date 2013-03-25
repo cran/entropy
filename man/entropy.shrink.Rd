@@ -5,9 +5,9 @@
 \title{Shrinkage Entropy and Mutual Information Estimator}
 
 \usage{
-entropy.shrink(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
-mi.shrink(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
-freqs.shrink(y, target=1/length(y), verbose=TRUE)
+entropy.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+mi.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+freqs.shrink(y, lambda.freqs, target=1/length(y), verbose=TRUE)
 }
 
 \description{
@@ -28,6 +28,7 @@ freqs.shrink(y, target=1/length(y), verbose=TRUE)
                 The default is "nats" (natural units). For 
                 computing entropy in "bits" set \code{unit="log2"}.}
   \item{target}{the shrinkage target for the frequencies (default: uniform distribution).}
+  \item{lambda.freqs}{shrinkage intensity.  If not specified (default) it is estimated in a James-Stein-type fashion.}
   \item{verbose}{report shrinkage intensity.}
 }
 \details{

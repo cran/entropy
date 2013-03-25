@@ -4,9 +4,8 @@
 \title{Estimating Entropy From Observed Counts}
 
 \usage{
-entropy(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"),
-                   unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE, ...)
-freqs(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
+entropy(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE, ...)
+freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
 }
 
 \description{
@@ -22,6 +21,7 @@ freqs(y, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB
   \item{unit}{the unit in which entropy is measured. 
                 The default is "nats" (natural units). For 
                 computing entropy in "bits" set \code{unit="log2"}.}
+  \item{lambda.freqs}{shrinkage intensity (for "shrink" option). }
   \item{target}{shrinkage target (for "shrink" option). }
   \item{verbose}{verbose option (for "shrink" option).  }
   \item{\dots}{option passed on to \code{\link{entropy.NSB}}.}

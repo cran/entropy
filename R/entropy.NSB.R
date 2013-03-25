@@ -1,4 +1,4 @@
-### entropy.NSB.R  (2008-08-20)
+### entropy.NSB.R  (2008-08-21)
 ###
 ###    R interface to the nsb-entropy estimator
 ###
@@ -32,9 +32,9 @@ entropy.NSB = function(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")
 
   tmpfile = tempfile()
   tmpfile.txt = paste(tmpfile, "txt", sep=".")
-  nsboutfile = nsbsave(file=tmpfile.txt, y)
+  nsboutfile = nsbsave(filename=tmpfile.txt, y)
   system(paste(CMD, "-dnum -s1 -e1 -cY -v0", tmpfile))
-  H = nsbload(file=nsboutfile)
+  H = nsbload(filename=nsboutfile)
   unlink(nsboutfile)
   unlink(tmpfile.txt)
 

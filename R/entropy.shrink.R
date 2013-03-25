@@ -1,8 +1,8 @@
-### entropy.shrink.R  (2008-10-26)
+### entropy.shrink.R  (2013-03-25)
 ###
 ###    Shrinkage entropy and mutual information estimator
 ###
-### Copyright 2008 Korbinian Strimmer
+### Copyright 2008-13 Korbinian Strimmer
 ###
 ###
 ### This file is part of the `entropy' library for R and related languages.
@@ -27,9 +27,9 @@
 # y:  a vector of counts (may include zeros)
  
 
-entropy.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+entropy.shrink = function(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
 {
-  f = freqs.shrink(y, target=target, verbose=verbose)
+  f = freqs.shrink(y, lambda.freqs=lambda.freqs, target=target, verbose=verbose)
   h = entropy.plugin(f, unit=unit)
   attr(h, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
 
@@ -37,30 +37,43 @@ entropy.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y),
 }
 
 
-freqs.shrink = function (y, target = 1/length(y), verbose = TRUE) 
+freqs.shrink = function (y, lambda.freqs, target = 1/length(y), verbose = TRUE) 
 {
     n = sum(y)
     u = y/n
 
-    if (n==1 || n==0)
+    if (missing(lambda.freqs))
     {
-      lambda.freqs = 1
-       u.shrink = rep(0, length(y)) + target
+      if (n==1 || n==0)
+      {
+        lambda.freqs = 1
+      }
+      else
+      {
+        lambda.freqs = get.lambda.shrink(n, u, target, verbose)
+      }
+
     }
     else
     {
-      lambda.freqs = get.lambda.shrink(n, u, target, verbose)
-      u.shrink = lambda.freqs * target + (1 - lambda.freqs) * u
+      if (verbose)
+      {
+        cat(paste("Specified shrinkage intensity lambda.freq (frequencies):", 
+           round(lambda.freqs, 4)) , "\n")
+      }
+     
     }
+    u.shrink = lambda.freqs * target + (1 - lambda.freqs) * u
+
     attr(u.shrink, "lambda.freqs") = lambda.freqs
     
     return(u.shrink)
 }
 
 
-mi.shrink = function(y, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+mi.shrink = function(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
 {
-  f = freqs.shrink(y, target=target, verbose=verbose)
+  f = freqs.shrink(y, lambda.freqs=lambda.freqs, target=target, verbose=verbose)
   mi = mi.plugin(f, unit=unit)
   attr(mi, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
 
