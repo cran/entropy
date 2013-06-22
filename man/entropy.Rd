@@ -4,8 +4,11 @@
 \title{Estimating Entropy From Observed Counts}
 
 \usage{
-entropy(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE, ...)
-freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
+entropy(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG",
+    "minimax", "CS", "NSB", "shrink"), unit=c("log", "log2", "log10"), 
+    target=1/length(y), verbose=TRUE, ...)
+freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG",
+    "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
 }
 
 \description{
@@ -54,7 +57,7 @@ freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG", "minima
 \author{
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
-\seealso{\code{\link{entropy-package}}}
+\seealso{\code{\link{entropy-package}}, \code{\link{discretize}}.}
 
 \examples{
 # load entropy library 

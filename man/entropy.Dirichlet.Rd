@@ -79,7 +79,7 @@ freqs.Dirichlet(y, a)
          \code{\link{entropy.ChaoShen}}, 
          \code{\link{entropy.empirical}}, 
          \code{\link{entropy.plugin}},
-         \code{\link{mi.plugin}}.
+         \code{\link{mi.plugin}}, \code{\link{discretize}}.
 }
 
 \examples{

@@ -5,8 +5,10 @@
 \title{Shrinkage Entropy and Mutual Information Estimator}
 
 \usage{
-entropy.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
-mi.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+entropy.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"),
+    target=1/length(y), verbose=TRUE)
+mi.shrink(y, lambda.freqs, unit=c("log", "log2", "log10"),
+    target=1/length(y), verbose=TRUE)
 freqs.shrink(y, lambda.freqs, target=1/length(y), verbose=TRUE)
 }
 
@@ -61,7 +63,7 @@ freqs.shrink(y, lambda.freqs, target=1/length(y), verbose=TRUE)
 \seealso{\code{\link{entropy}}, \code{\link{entropy.Dirichlet}}, 
           \code{\link{entropy.NSB}}, 
          \code{\link{entropy.ChaoShen}}, 
-         \code{\link{entropy.plugin}},  \code{\link{mi.plugin}}.}
+         \code{\link{entropy.plugin}},  \code{\link{mi.plugin}}, \code{\link{discretize}}.}
 
 \examples{
 # load entropy library 

@@ -3,6 +3,13 @@
                ========================================
 
 
+             CHANGES IN `entropy' PACKAGE VERSION 1.1.9
+
+* new discretize() function for simple binning of a continuous random
+  variable.
+* now requires R >= 2.15.1.
+
+
              CHANGES IN `entropy' PACKAGE VERSION 1.1.8
 
 * License file removed.

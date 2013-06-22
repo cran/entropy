@@ -50,7 +50,7 @@ freqs.empirical(y)
 }
 
 \seealso{\code{\link{entropy}}, \code{\link{entropy.MillerMadow}}, \code{\link{entropy.plugin}},
- \code{\link{mi.plugin}}.}
+ \code{\link{mi.plugin}}, \code{\link{discretize}}.}
 
 
 \examples{
