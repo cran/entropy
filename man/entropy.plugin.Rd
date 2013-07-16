@@ -31,7 +31,8 @@ entropy.plugin(freqs, unit=c("log", "log2", "log10"))
   Korbinian Strimmer (\url{http://strimmerlab.org}).
 }
 
-\seealso{\code{\link{entropy}}, \code{\link{entropy.empirical}}, \code{\link{mi.shrink}}, \code{\link{discretize}}.}
+\seealso{\code{\link{entropy}}, \code{\link{entropy.empirical}}, \code{\link{entropy.shrink}}, 
+\code{\link{mi.plugin}}, \code{\link{KL.plugin}}, \code{\link{discretize}}.}
 
 
 \examples{

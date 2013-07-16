@@ -1,4 +1,4 @@
-### entropy.R  (2013-03-25)
+### entropy.R  (2013-07-16)
 ###
 ###    Estimating entropy from observed counts
 ###
@@ -24,7 +24,7 @@
 
 entropy = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", 
                    "SG", "minimax", "CS", "NSB", "shrink"),
-                   unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE, ...)
+                   unit=c("log", "log2", "log10"), verbose=TRUE, ...)
 {
   method = match.arg(method)
 
@@ -39,13 +39,13 @@ entropy = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace",
   if (method == "minimax")  H = entropy.Dirichlet(y, a=sqrt(sum(y))/length(y), unit=unit)
 
   if (method == "shrink")   H = entropy.shrink(y, lambda.freqs=lambda.freqs,
-      unit=unit, verbose=verbose, target=target)
+      unit=unit, verbose=verbose)
 
   return(H)
 }
 
 freqs = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", 
-                   "SG", "minimax", "CS", "NSB", "shrink"), target=1/length(y), verbose=TRUE)
+                   "SG", "minimax", "CS", "NSB", "shrink"), verbose=TRUE)
 {
   method = match.arg(method)
 
@@ -60,7 +60,7 @@ freqs = function(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace",
   if (method == "minimax")  H = freqs.Dirichlet(y, a=sqrt(sum(y))/length(y))
 
   if (method == "shrink")   H = freqs.shrink(y, lambda.freqs=lambda.freqs,
-                               verbose=verbose, target=target)
+                               verbose=verbose)
 
   return(H)
 }

@@ -1,6 +1,7 @@
-### entropy.shrink.R  (2013-03-25)
+### entropy.shrink.R  (2013-07-16)
 ###
-###    Shrinkage entropy and mutual information estimator
+###    Shrinkage estimators of entropy, mutual information
+###    and related quantities
 ###
 ### Copyright 2008-13 Korbinian Strimmer
 ###
@@ -25,20 +26,18 @@
 # shrinkage estimate of entropy 
 
 # y:  a vector of counts (may include zeros)
- 
-
-entropy.shrink = function(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+entropy.shrink = function(y, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE)
 {
-  f = freqs.shrink(y, lambda.freqs=lambda.freqs, target=target, verbose=verbose)
+  f = freqs.shrink(y, lambda.freqs=lambda.freqs, verbose=verbose)
   h = entropy.plugin(f, unit=unit)
   attr(h, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
 
   return( h )
 }
 
-
-freqs.shrink = function (y, lambda.freqs, target = 1/length(y), verbose = TRUE) 
+freqs.shrink = function (y, lambda.freqs, verbose = TRUE) 
 {
+    target = 1/length(y) # uniform target (note length() works also for matrices)
     n = sum(y)
     u = y/n
 
@@ -71,14 +70,54 @@ freqs.shrink = function (y, lambda.freqs, target = 1/length(y), verbose = TRUE)
 }
 
 
-mi.shrink = function(y, lambda.freqs, unit=c("log", "log2", "log10"), target=1/length(y), verbose=TRUE)
+# shrinkage estimation of mutual information
+mi.shrink = function(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE)
 {
-  f = freqs.shrink(y, lambda.freqs=lambda.freqs, target=target, verbose=verbose)
-  mi = mi.plugin(f, unit=unit)
-  attr(mi, "lambda.freqs") = attr(f, "lambda.freqs") # shrinkage intensity
+  f2d = freqs.shrink(y2d, lambda.freqs=lambda.freqs, verbose=verbose)
+  mi = mi.plugin(f2d, unit=unit)
+  attr(mi, "lambda.freqs") = attr(f2d, "lambda.freqs") # shrinkage intensity
 
   return( mi )
 }
+
+# shrinkage estimation of chi-squared of independence
+chi2indep.shrink = function(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE)
+{
+  f2d = freqs.shrink(y2d, lambda.freqs=lambda.freqs, verbose=verbose)
+  chi2 = chi2indep.plugin(f2d, unit=unit)
+  attr(chi2, "lambda.freqs") = attr(f2d, "lambda.freqs") # shrinkage intensity
+
+  return( chi2 )
+}
+
+
+# shrinkage estimation of chi-squared statistic
+chi2.shrink = function(y1, y2, lambda.freqs1, lambda.freqs2,
+                       unit=c("log", "log2", "log10"), verbose=TRUE)
+{
+  f1 = freqs.shrink(y1, lambda.freqs=lambda.freqs1, verbose=verbose)
+  f2 = freqs.shrink(y2, lambda.freqs=lambda.freqs2, verbose=verbose)
+  chi2 = chi2.plugin(f1, f2, unit=unit)
+  attr(chi2, "lambda.freqs1") = attr(f1, "lambda.freqs") # shrinkage intensity 1
+  attr(chi2, "lambda.freqs2") = attr(f2, "lambda.freqs") # shrinkage intensity 2
+
+  return( chi2 )
+}
+
+# shrinkage estimation of KL divergence
+KL.shrink = function(y1, y2, lambda.freqs1, lambda.freqs2,
+                     unit=c("log", "log2", "log10"), verbose=TRUE)
+{
+  f1 = freqs.shrink(y1, lambda.freqs=lambda.freqs1, verbose=verbose)
+  f2 = freqs.shrink(y2, lambda.freqs=lambda.freqs2, verbose=verbose)
+  KL = KL.plugin(f1, f2, unit=unit)
+  attr(KL, "lambda.freqs1") = attr(f1, "lambda.freqs") # shrinkage intensity 1
+  attr(KL, "lambda.freqs2") = attr(f2, "lambda.freqs") # shrinkage intensity 2
+
+  return( KL )
+}
+
+
 
 
 ## private function

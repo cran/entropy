@@ -1,8 +1,9 @@
-### entropy.Dirichlet.R  (2008-09-28)
+### entropy.Dirichlet.R  (2013-07-16)
 ###
-###    Family of Dirichlet entropy and mutual information estimators
+###    Dirichlet prior Bayesian estimators of entropy, mutual
+###     information and related quantities
 ###
-### Copyright 2008 Korbinian Strimmer
+### Copyright 2008-13 Korbinian Strimmer
 ###
 ###
 ### This file is part of the `entropy' library for R and related languages.
@@ -49,10 +50,43 @@ freqs.Dirichlet = function(y, a)
 }
 
 
-mi.Dirichlet = function(y, a, unit=c("log", "log2", "log10"))
+# mutual information
+mi.Dirichlet = function(y2d, a, unit=c("log", "log2", "log10"))
 {
-  return( mi.plugin(freqs.Dirichlet(y, a), unit=unit) )
+  f2d = freqs.Dirichlet(y2d, a)
+  mi = mi.plugin(f2d, unit=unit)
+  return( mi )
 }
+
+# chi-squared of independence
+chi2indep.Dirichlet = function(y2d, a, unit=c("log", "log2", "log10"))
+{
+  f2d = freqs.Dirichlet(y2d, a)
+  chi2 = chi2indep.plugin(f2d, unit=unit)
+  return( chi2 )
+}
+
+
+# chi-squared statistic
+chi2.Dirichlet = function(y1, y2, a1, a2, unit=c("log", "log2", "log10"))
+{
+  f1 = freqs.Dirichlet(y1, a1)
+  f2 = freqs.Dirichlet(y2, a2)
+  chi2 = chi2.plugin(f1, f2, unit=unit)
+  return( chi2 )
+}
+
+# KL divergence
+KL.Dirichlet = function(y1, y2, a1, a2, unit=c("log", "log2", "log10"))
+{
+  f1 = freqs.Dirichlet(y1, a1)
+  f2 = freqs.Dirichlet(y2, a2)
+  KL = KL.plugin(f1, f2, unit=unit)
+  return( KL )
+}
+
+
+
 
 
 

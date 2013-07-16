@@ -3,6 +3,21 @@
                ========================================
 
 
+             CHANGES IN `entropy' PACKAGE VERSION 1.2.0
+
+* new functions KL.plugin(), KL.empirical(), Kl.Dirichlet(), and 
+  KL.shrink() for computing the Kullback-Leibler divergence.
+* new functions chi2.plugin(), chi2.empirical(), chi2.Dirichlet(), and
+  chi2.shrink() for computing the chi-squared statistic.
+* new functions chi2indep.plugin(), chi2indep.empirical(), 
+  chi2indep.Dirichlet(), and chi2indep.shrink() for computing the 
+  chi-squared statistic of independence.
+* new discretize2d() function for simple binning of a pair of random
+  variables.
+* in all shrinkage functions the target option has been removed (and
+  the default uniform target is now always used).
+ 
+
              CHANGES IN `entropy' PACKAGE VERSION 1.1.9
 
 * new discretize() function for simple binning of a continuous random

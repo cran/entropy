@@ -1,5 +1,14 @@
 export(
+"chi2.Dirichlet",
+"chi2.empirical",
+"chi2.plugin",
+"chi2.shrink",
+"chi2indep.Dirichlet",
+"chi2indep.empirical",
+"chi2indep.plugin",
+"chi2indep.shrink",
 "discretize", 
+"discretize2d", 
 "entropy",
 "entropy.ChaoShen",
 "entropy.Dirichlet",
@@ -15,6 +24,10 @@ export(
 "mi.Dirichlet",
 "mi.empirical",
 "mi.plugin",
-"mi.shrink"
+"mi.shrink",
+"KL.Dirichlet",
+"KL.empirical",
+"KL.plugin",
+"KL.shrink"
 )
 
