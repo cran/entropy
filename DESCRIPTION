@@ -1,9 +1,9 @@
 Package: entropy
-Version: 1.2.0
-Date: 2013-07-16
+Version: 1.2.1
+Date: 2014-11-14
 Title: Estimation of Entropy, Mutual Information and Related Quantities
 Author: Jean Hausser and Korbinian Strimmer
-Maintainer: Korbinian Strimmer <strimmer@uni-leipzig.de>
+Maintainer: Korbinian Strimmer <strimmerlab@gmail.com>
 Depends: R (>= 2.15.1)
 Suggests:
 Description: This package implements various estimators of entropy, such
@@ -11,11 +11,11 @@ Description: This package implements various estimators of entropy, such
   and the Millow-Madow estimator, various Bayesian estimators, and the 
   Chao-Shen estimator.  It also offers an R interface to the NSB estimator.
   Furthermore, it provides functions for estimating Kullback-Leibler divergence,
-  chi2-squared, mutual information, and chi2-squared statistic of independence.
+  chi-squared, mutual information, and chi-squared statistic of independence.
   In addition there are functions for discretizing continuous random variables.
 License: GPL (>= 3)
 URL: http://strimmerlab.org/software/entropy/
-Packaged: 2013-07-16 14:49:04 UTC; strimmer
+Packaged: 2014-11-14 00:40:28 UTC; strimmer
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-07-16 17:09:09
+Date/Publication: 2014-11-14 08:16:32

@@ -1,6 +1,6 @@
-13fb2fc5056baeacfa1a05a4b0347e32 *DESCRIPTION
+cdbaba95246f55f09d137d48547cd2e1 *DESCRIPTION
 322dfa260d886398b6791dc773cbc7ab *NAMESPACE
-c9c6e6214c42eee07679bfb3ced3c4c8 *NEWS
+3f2049cbde2eec0de1d9dc8f4910d507 *NEWS
 7e240a3cb161e1c51856b0bd9890907f *R/KL.plugin.R
 dc04e7d3575a29cb936ac11580ce35f6 *R/discretize.R
 f37ce6bce879dfe29fb691f93664904d *R/entropy.ChaoShen.R
@@ -16,7 +16,7 @@ d73ada11d08826a8506f4c9927163010 *R/entropy.R
 bc584df544c45073121abedc8789c596 *man/discretize.Rd
 37ef10ab8ca374b7fe57beaefb763bff *man/entropy-internal.Rd
 37eaa794b449c7371f60126ae781194d *man/entropy.ChaoShen.Rd
-2a45225b5af69bbbdf41b523c403c9c4 *man/entropy.Dirichlet.Rd
+d742206813537bcdceed7b94e103d58b *man/entropy.Dirichlet.Rd
 c57bccfef1002c63d0ba766b6143ea13 *man/entropy.MillerMadow.Rd
 59c37a501a537d0a3e0c8462692a39e1 *man/entropy.NSB.Rd
 0c1483fb15cbe88a9c8ee929f4917e1f *man/entropy.Rd

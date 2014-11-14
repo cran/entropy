@@ -162,7 +162,7 @@ y2d = rbind( c(1,2,3), c(6,5,4) )
 # Bayesian estimate of mutual information (a=1/6)
 mi.Dirichlet(y2d, a=1/6)
 
-# half of the shrinkage chi-squared statistic of independence
+# half of the Bayesian chi-squared statistic of independence
 0.5*chi2indep.Dirichlet(y2d, a=1/6)
 
 
