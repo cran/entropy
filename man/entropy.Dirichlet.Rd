@@ -31,12 +31,12 @@ chi2indep.Dirichlet(y2d, a, unit=c("log", "log2", "log10"))
   \code{KL.Dirichlet} computes a Bayesian estimate of the Kullback-Leibler (KL) divergence 
    from counts \code{y1} and \code{y2}.
 
-  \code{chi2.Dirichlet} computes a Bayesian version of the chi-squared statistic
+  \code{chi2.Dirichlet} computes a Bayesian version of the chi-squared divergence
    from counts \code{y1} and \code{y2}.
 
   \code{mi.Dirichlet} computes a Bayesian estimate of mutual information of two random variables.
 
-  \code{chi2indep.Dirichlet} computes a Bayesian version of the chi-squared statistic of 
+  \code{chi2indep.Dirichlet} computes a Bayesian version of the chi-squared divergence of 
    independence from a table of counts \code{y2d}.
 }
 
@@ -80,11 +80,11 @@ chi2indep.Dirichlet(y2d, a, unit=c("log", "log2", "log10"))
 
   \code{KL.Dirichlet} returns the Bayesian estimate of the KL divergence. 
 
-  \code{chi2.Dirichlet} returns the Bayesian version of the chi-squared statistic. 
+  \code{chi2.Dirichlet} returns the Bayesian version of the chi-squared divergence. 
 
   \code{mi.Dirichlet} returns the Bayesian estimate of the mutual information. 
 
-  \code{chi2indep.Dirichlet} returns the Bayesian version of the chi-squared statistic of independence. 
+  \code{chi2indep.Dirichlet} returns the Bayesian version of the chi-squared divergence of independence. 
 
 }
 
@@ -100,7 +100,7 @@ chi2indep.Dirichlet(y2d, a, unit=c("log", "log2", "log10"))
 
 }
 \author{
-  Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
 }
 \seealso{\code{\link{entropy}}, 
          \code{\link{entropy.shrink}},
@@ -150,7 +150,7 @@ y2 = c(2, 3, 7, 1, 4, 3)
 # Bayesian estimate of Kullback-Leibler divergence (a=1/6)
 KL.Dirichlet(y1, y2, a1=1/6, a2=1/6)
 
-# half of the corresponding chi-squared statistic
+# half of the corresponding chi-squared divergence
 0.5*chi2.Dirichlet(y1, y2, a1=1/6, a2=1/6)
 
 
@@ -162,7 +162,7 @@ y2d = rbind( c(1,2,3), c(6,5,4) )
 # Bayesian estimate of mutual information (a=1/6)
 mi.Dirichlet(y2d, a=1/6)
 
-# half of the Bayesian chi-squared statistic of independence
+# half of the Bayesian chi-squared divergence of independence
 0.5*chi2indep.Dirichlet(y2d, a=1/6)
 
 

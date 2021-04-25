@@ -7,6 +7,10 @@ export(
 "chi2indep.empirical",
 "chi2indep.plugin",
 "chi2indep.shrink",
+"Gstat",
+"Gstatindep",
+"chi2stat",
+"chi2statindep",
 "discretize", 
 "discretize2d", 
 "entropy",
@@ -30,4 +34,4 @@ export(
 "KL.plugin",
 "KL.shrink"
 )
-
+importFrom("stats", "pchisq")

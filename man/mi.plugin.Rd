@@ -11,13 +11,13 @@ chi2indep.plugin(freqs2d, unit=c("log", "log2", "log10"))
 
 \description{
   \code{mi.plugin} computes the mutual information 
-   of two discrete random variables from the specified joint bin frequencies.
+   of two discrete random variables from the specified joint probability mass function.
 
-  \code{chi2indep.plugin} computes the chi-squared statistic of independence.
+  \code{chi2indep.plugin} computes the chi-squared divergence of independence.
 }
 
 \arguments{
-  \item{freqs2d}{matrix of joint bin frequencies.}
+  \item{freqs2d}{matrix of joint bin frequencies (joint probability mass function).}
   \item{unit}{the unit in which entropy is measured. 
                 The default is "nats" (natural units). For 
                 computing entropy in "bits" set \code{unit="log2"}.}
@@ -29,20 +29,20 @@ chi2indep.plugin(freqs2d, unit=c("log", "log2", "log10"))
 
    It can also defined using entropy as \eqn{MI = H(X) + H(Y) - H(X, Y)}. 
 
-   Similarly, the chi-squared statistic of independence is the chi-squared statistic
-   between the joint density and the product density. It is a second-order accurate
+   Similarly, the chi-squared divergence of independence is the chi-squared divergence
+   between the joint density and the product density. It is a second-order 
    approximation of twice the mutual information.
 
 }
 \value{
   \code{mi.plugin} returns the mutual information.
 
-  \code{chi2indep.plugin} returns the chi-squared statistic of independence. 
+  \code{chi2indep.plugin} returns the chi-squared divergence of independence. 
 }
 
 
 \author{
-  Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
 }
 
 \seealso{\code{\link{mi.Dirichlet}}, \code{\link{mi.shrink}}, \code{\link{mi.empirical}}, \code{\link{KL.plugin}}, \code{\link{discretize2d}}. }
@@ -64,7 +64,7 @@ H2 = entropy.plugin(colSums(freqs2d))
 H12 = entropy.plugin(freqs2d)
 H1+H2-H12
 
-# and corresponding (half) chi-squared statistic of independence
+# and corresponding (half) chi-squared divergence of independence
 0.5*chi2indep.plugin(freqs2d)
 
 }

@@ -31,12 +31,12 @@ chi2indep.shrink(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE
   \code{KL.shrink} computes a shrinkage estimate of the Kullback-Leibler (KL) divergence 
    from counts \code{y1} and \code{y2}.
 
-  \code{chi2.shrink} computes a shrinkage version of the chi-squared statistic
+  \code{chi2.shrink} computes a shrinkage version of the chi-squared divergence
    from counts \code{y1} and \code{y2}.
 
   \code{mi.shrink} estimates a shrinkage estimate of mutual information of two random variables.
  
-   \code{chi2indep.shrink} computes a shrinkage version of the chi-squared statistic of independence
+   \code{chi2indep.shrink} computes a shrinkage version of the chi-squared divergence of independence
    from a table of counts \code{y2d}.
 
 }
@@ -70,11 +70,11 @@ chi2indep.shrink(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE
 
     \code{KL.shrink} returns a shrinkage estimate of the KL divergence. 
 
-    \code{chi2.shrink} returns a shrinkage version of the chi-squared statistic. 
+    \code{chi2.shrink} returns a shrinkage version of the chi-squared divergence. 
 
     \code{mi.shrink} returns a shrinkage estimate of the mutual information. 
 
-    \code{chi2indep.shrink} returns a shrinkage version of the chi-squared statistic of independence. 
+    \code{chi2indep.shrink} returns a shrinkage version of the chi-squared divergence of independence. 
 
    In all instances the estimated shrinkage intensity is attached to the returned
    value as attribute \code{lambda.freqs}.
@@ -84,10 +84,10 @@ chi2indep.shrink(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE
   Hausser, J., and K. Strimmer. 2009.  Entropy inference and the James-Stein
   estimator, with application to nonlinear gene association networks. 
    J. Mach. Learn. Res. \bold{10}: 1469-1484.  Available online from
-   \url{http://jmlr.csail.mit.edu/papers/v10/hausser09a.html}.
+   \url{https://jmlr.csail.mit.edu/papers/v10/hausser09a.html}.
 }
 \author{
-  Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
 }
 \seealso{\code{\link{entropy}}, \code{\link{entropy.Dirichlet}}, 
          \code{\link{entropy.plugin}},  
@@ -118,7 +118,7 @@ y2 = c(2, 3, 7, 1, 4, 3)
 # shrinkage estimate of Kullback-Leibler divergence
 KL.shrink(y1, y2)
 
-# half of the shrinkage chi-squared statistic
+# half of the shrinkage chi-squared divergence
 0.5*chi2.shrink(y1, y2)
 
 
@@ -130,7 +130,7 @@ y2d = rbind( c(1,2,3), c(6,5,4) )
 # shrinkage estimate of mutual information
 mi.shrink(y2d)
 
-# half of the shrinkage chi-squared statistic of independence
+# half of the shrinkage chi-squared divergence of independence
 0.5*chi2indep.shrink(y2d)
 
 

@@ -27,12 +27,12 @@ chi2indep.empirical(y2d, unit=c("log", "log2", "log10"))
   \code{KL.empirical} computes the empirical Kullback-Leibler (KL) divergence 
    from counts \code{y1} and \code{y2}.
 
-  \code{chi2.empirical} computes the empirical chi-squared statistic
+  \code{chi2.empirical} computes the empirical chi-squared divergence
    from counts \code{y1} and \code{y2}.
 
   \code{mi.empirical} computes the empirical mutual information from a table of counts \code{y2d}.
 
-  \code{chi2indep.empirical} computes the empirical chi-squared statistic of independence
+  \code{chi2indep.empirical} computes the empirical chi-squared divergence of independence
    from a table of counts \code{y2d}.
   
 }
@@ -63,20 +63,22 @@ chi2indep.empirical(y2d, unit=c("log", "log2", "log10"))
 
     \code{KL.empirical} returns an estimate of the KL divergence. 
 
-    \code{chi2.empirical} returns the empirical chi-squared statistic. 
+    \code{chi2.empirical} returns the empirical chi-squared divergence. 
 
     \code{mi.empirical} returns an estimate of the mutual information. 
 
-    \code{chi2indep.empirical} returns the empirical chi-squared statistic of independence. 
+    \code{chi2indep.empirical} returns the empirical chi-squared divergence of independence. 
 }
 
 
 \author{
-  Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
 }
 
 \seealso{\code{\link{entropy}}, \code{\link{entropy.plugin}}, \code{\link{KL.plugin}},
-\code{\link{chi2.plugin}}, \code{\link{mi.plugin}}, \code{\link{chi2indep.plugin}}, \code{\link{discretize}}.}
+\code{\link{chi2.plugin}}, \code{\link{mi.plugin}}, \code{\link{chi2indep.plugin}},
+\code{\link{Gstat}}, \code{\link{Gstatindep}}, \code{\link{chi2stat}}, 
+\code{\link{chi2statindep}}, \code{\link{discretize}}.}
 
 
 \examples{
@@ -84,7 +86,7 @@ chi2indep.empirical(y2d, unit=c("log", "log2", "log10"))
 library("entropy")
 
 
-# a single variable
+## a single variable: entropy
 
 # observed counts for each bin
 y = c(4, 2, 3, 0, 2, 4, 0, 0, 2, 1, 1)  
@@ -96,30 +98,44 @@ freqs.empirical(y)
 entropy.empirical(y)
 
 
-# example with two variables
+## examples with two variables: KL and chi-squared divergence
 
-# observed counts for two random variables
-y1 = c(4, 2, 3, 1, 10, 4)
-y2 = c(2, 3, 7, 1, 4, 3)
+# observed counts for first random variables (observed)
+y1 = c(4, 2, 3, 1, 6, 4)
+n = sum(y1) # 20
+
+# counts for the second random variable (expected)
+freqs.expected = c(0.10, 0.15, 0.35, 0.05, 0.20, 0.15)
+y2 = n*freqs.expected
 
 # empirical Kullback-Leibler divergence
-KL.empirical(y1, y2)
+KL.div = KL.empirical(y1, y2)
+KL.div
 
-# half of the empirical chi-squared statistic
-0.5*chi2.empirical(y1, y2)
+# empirical chi-squared divergence
+cs.div = chi2.empirical(y1, y2)
+cs.div 
+0.5*cs.div  # approximates KL.div
+
+## note: see also Gstat and chi2stat
 
 
-## joint distribution example
+## joint distribution of two discrete random variables
 
 # contingency table with counts for two discrete variables
-y2d = rbind( c(1,2,3), c(6,5,4) )
+y.mat = matrix(c(4, 5, 1, 2, 4, 4), ncol = 2)  # 3x2 example matrix of counts
+n.mat = sum(y.mat) # 20
 
 # empirical estimate of mutual information
-mi.empirical(y2d)
+mi = mi.empirical(y.mat)
+mi
 
-# half of the empirical chi-squared statistic of independence
-0.5*chi2indep.empirical(y2d)
+# empirical chi-squared divergence of independence
+cs.indep = chi2indep.empirical(y.mat)
+cs.indep
+0.5*cs.indep # approximates mi
 
+## note: see also Gstatindep and chi2statindep
 
 }
 \keyword{univar}

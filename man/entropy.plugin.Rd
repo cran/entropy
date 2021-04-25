@@ -8,19 +8,18 @@ entropy.plugin(freqs, unit=c("log", "log2", "log10"))
 
 \description{
   \code{entropy.plugin} computes the Shannon entropy H 
-   of a discrete random variable from the specified bin frequencies.
+   of a discrete random variable with the specified frequencies (probability mass function).
 }
 
 \arguments{
-  \item{freqs}{bin frequencies.}
+  \item{freqs}{frequencies (probability mass function).}
   \item{unit}{the unit in which entropy is measured. 
                 The default is "nats" (natural units). For 
                 computing entropy in "bits" set \code{unit="log2"}.}
 }
 \details{
    The Shannon entropy of a discrete random variable is 
-   defined as \eqn{H = -\sum p(x_i) \log( p(x_i) )}, where \eqn{p(x_i)} are the bin
-   probabilities.
+   defined as \eqn{H = -\sum_k p(k) \log( p(k) )}, where \eqn{p} is its probability mass function.
 }
 \value{
   \code{entropy.plugin} returns the Shannon entropy. 
@@ -28,7 +27,7 @@ entropy.plugin(freqs, unit=c("log", "log2", "log10"))
 
 
 \author{
-  Korbinian Strimmer (\url{http://strimmerlab.org}).
+  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
 }
 
 \seealso{\code{\link{entropy}}, \code{\link{entropy.empirical}}, \code{\link{entropy.shrink}}, 

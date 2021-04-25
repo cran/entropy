@@ -2,6 +2,17 @@
                  Release History of "entropy" Package
                ========================================
 
+
+             CHANGES IN `entropy' PACKAGE VERSION 1.3.0
+
+- updated documentation for chi2.plugin() and and chi2.empirical() to compute
+  chi-squared divergence.
+- new functions  Gstat() and chi2stat() to compute the statistic and the Pearson
+  chi-squared statistic with (asymptotic) p-values.
+- new functions Gstatindep() and chi2statindep() to compute the G statistic and
+  Pearson chi-squared statistic to test independence.
+
+
              CHANGES IN `entropy' PACKAGE VERSION 1.2.1
 
 

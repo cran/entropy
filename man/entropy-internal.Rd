@@ -5,6 +5,8 @@
 
 \alias{get.lambda.shrink}
 
+\alias{pvt.chisq.pval}
+
 
 \title{Internal entropy functions}
 \description{
