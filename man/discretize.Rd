@@ -39,7 +39,7 @@ discretize2d( x1, x2, numBins1, numBins2, r1=range(x1), r2=range(x2) )
 
 
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{entropy}}.}
 

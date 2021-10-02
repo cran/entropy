@@ -43,7 +43,7 @@ the index for the classes.
 
 
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 
 \seealso{\code{\link{KL.Dirichlet}}, \code{\link{KL.shrink}}, \code{\link{KL.empirical}}, \code{\link{mi.plugin}}, \code{\link{discretize2d}}. }

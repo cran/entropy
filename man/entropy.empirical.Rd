@@ -72,7 +72,7 @@ chi2indep.empirical(y2d, unit=c("log", "log2", "log10"))
 
 
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 
 \seealso{\code{\link{entropy}}, \code{\link{entropy.plugin}}, \code{\link{KL.plugin}},

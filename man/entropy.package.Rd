@@ -22,9 +22,9 @@ This paper contains a detailed statistical comparison of the estimators availabl
 in this package. It also describes the shrinkage entropy estimator \code{\link{entropy.shrink}}.
 }
 
-\author{Jean Hausser and Korbinian Strimmer (\url{http://www.strimmerlab.org/})}
+\author{Jean Hausser and Korbinian Strimmer (\url{https://strimmerlab.github.io/})}
 \references{
-  See website: \url{http://www.strimmerlab.org/software/entropy/}
+  See website: \url{https://strimmerlab.github.io/software/entropy/}
 }
 \keyword{univar}
 \seealso{

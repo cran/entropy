@@ -34,7 +34,7 @@ entropy.MillerMadow(y, unit=c("log", "log2", "log10"))
   Info. Theory Psychol. Prob. Methods  \bold{II-B}:95-100.
 }
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{entropy.empirical}}}
 

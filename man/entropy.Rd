@@ -53,7 +53,7 @@ freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG",
 }
 
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{entropy-package}}, \code{\link{discretize}}.}
 

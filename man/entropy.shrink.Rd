@@ -87,7 +87,7 @@ chi2indep.shrink(y2d, lambda.freqs, unit=c("log", "log2", "log10"), verbose=TRUE
    \url{https://jmlr.csail.mit.edu/papers/v10/hausser09a.html}.
 }
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{entropy}}, \code{\link{entropy.Dirichlet}}, 
          \code{\link{entropy.plugin}},  

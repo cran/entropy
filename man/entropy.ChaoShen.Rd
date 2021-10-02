@@ -41,7 +41,7 @@ entropy.ChaoShen(y, unit=c("log", "log2", "log10"))
   replacement from a finite universe. J. Am. Stat. Assoc. \bold{47}:663-685.
 }
 \author{
-  Korbinian Strimmer (\url{http://www.strimmerlab.org}).
+  Korbinian Strimmer (\url{https://strimmerlab.github.io}).
 }
 \seealso{\code{\link{entropy}}, 
          \code{\link{entropy.shrink}}, 
