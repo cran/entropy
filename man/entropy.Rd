@@ -30,7 +30,7 @@ freqs(y, lambda.freqs, method=c("ML", "MM", "Jeffreys", "Laplace", "SG",
 \details{
   The \code{entropy} function allows to estimate entropy from observed counts by a variety
   of methods:
- \itemize{
+ \describe{
   \item{\code{method="ML"}:}{maximum likelihood, see \code{\link{entropy.empirical}} }
   \item{\code{method="MM"}:}{bias-corrected maximum likelihood, see \code{\link{entropy.MillerMadow}} }
   \item{\code{method="Jeffreys"}:}{\code{\link{entropy.Dirichlet}} with \code{a=1/2} }

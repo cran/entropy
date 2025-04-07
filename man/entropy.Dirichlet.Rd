@@ -61,7 +61,7 @@ chi2indep.Dirichlet(y2d, a, unit=c("log", "log2", "log10"))
 
   The parameter \code{a} is a parameter of the Dirichlet prior, and in effect
   specifies the pseudocount per bin.  Popular choices of \code{a} are:
-  \itemize{
+  \describe{
    \item{a=0:}{maximum likelihood estimator (see \code{\link{entropy.empirical}}) } 
    \item{a=1/2:}{Jeffreys' prior; Krichevsky-Trovimov (1991) entropy estimator}
    \item{a=1:}{Laplace's prior}

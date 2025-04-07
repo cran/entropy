@@ -12,7 +12,7 @@ entropy.NSB(y, unit=c("log", "log2", "log10"), CMD="nsb-entropy")
    of Nemenman, Shafee and Bialek (2002).
 
    Note that this function is an R interface to the "nsb-entropy" program. 
-   Hence, this needs to be installed separately from \url{http://nsb-entropy.sourceforge.net/}.}
+   Hence, this needs to be installed separately from \url{https://nsb-entropy.sourceforge.net/}.}
 
 \arguments{
   \item{y}{vector of counts.}
